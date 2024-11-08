@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>O-Meto</title>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+
+    <body>
+        <section id="header">
+            <a href="#"><img src="img/logo.png" height="55px" class="logo" alt=""></a>
+
+            <div>
+                <ul id="navbar">
+                    <!-- <li><a class="active" href="index.html">Home</a></li> -->
+                    <li><a href="shop.html">Shop</a></li>
+                    <!-- <li><a href="blog.html">Blog</a></li> -->
+                    <li><a href="about.html">My Account</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li id="lg-bag"><a class="active" href="cart.html"><ion-icon name="cart" style="font-size: 50px;"></ion-icon></i></a></li>
+                    <a href="#" id="close"><ion-icon name="close"></ion-icon></a>
+                    <button class="btnLogout-popup">Logout</button>
+                </ul>
+            </div>
+            <div id="mobile">
+                <a href="cart.html"><ion-icon name="cart"></ion-icon></i></a>
+                <ion-icon id="bar" name="reorder-four-outline"></ion-icon>
+            </div>
+        </section>
+    
+        
+        <section id="page-header">
+            <div class="wrapper">
+                <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+                <div class="form-box login">
+                    <h2>Login</h2>
+                    <form action="#">
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                            <input type="email" required>
+                            <label>Email</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                            <input type="password" required>
+                            <label>Password</label>
+                        </div>
+                        <div class="remember-forgot">
+                            <label><input type="checkbox"> Remember me</label>
+                            <a href="#">Forget Password?</a>
+                        </div>
+                        <button type="submit" class="btn">Login</button>
+                        <div class="login-register">
+                            <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                        </div>
+                    </form>
+                </div>
+
+                
+                <div class="form-box register">
+                    <h2>Registration</h2>
+                    <form action="#">
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="person"></ion-icon></span>
+                            <input type="text" required>
+                            <label>Full Name</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                            <input type="email" required>
+                            <label>Email</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                            <input type="password" required>
+                            <label>Password</label>
+                        </div>
+                        <div class="remember-forgot">
+                            <label><input type="checkbox"> I agree to the terms & conditions</label>
+                        </div>
+                        <button type="submit" class="btn">Register</button>
+                        <div class="login-register">
+                            <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <h2>Checkout</h2>
+         
+ 
+        </section>
+
+        <section id="cart-items" class="section-p1">
+            <!-- Cart items will be dynamically added here using JavaScript -->
+        </section>
+        
+        <section id="newsletter" class="section-p1 section-m1">
+            <div class="newstext">
+                <h4>Thank you for shopping with us!</h4>
+                <p></span></p>
+            </div>
+            <div class="form">
+                <!-- <input type="text" placeholder="your email address">
+                <button class="normal">Sign Up</button> -->
+            </div>
+        </section>
+        
+
+        <footer class="section-p1">
+            <div class="col">
+                <img class="logo" src="img/logo1.png" alt="">
+                <h4>Contact</h4>
+                <p><strong>Address: </strong> Seattle, WA</p>
+                <p><strong>Phone: </strong> 206-240-9455</p>
+                <p><strong>Hours: </strong> 10:00 - 18:00, Mon - Sat</p>
+                <div class="follow">
+                    <h4>Follow us</h4>
+                    <div class="icon">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                        <ion-icon name="logo-twitter"></ion-icon>
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <h4>About</h4>
+                <a href="#">About Us</a>
+                <a href="#">Delivery Information</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="col">
+                <h4>My Account</h4>
+                <a href="#">Sign In</a>
+                <a href="#">View Cart</a>
+                <a href="#">My Wishlist</a>
+                <a href="#">Track My Order</a>
+                <a href="#">Help</a>
+            </div>
+            <div class="col install">
+                <h4>Secured Payment Gateways</h4>
+                <img src="img/pay/pay.png" alt="">
+            </div>
+            <div class="copyright">
+                <p>© 2023, korme kedir</p>
+            </div>
+        </footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const cartItemsContainer = document.getElementById('cart-items');
+        
+                let cartItems = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+        
+                function updateCartUI() {
+                    if (cartItems.length > 0) {
+                        const cartTable = document.createElement('table');
+                        cartTable.width = '100%';
+        
+                        // Table header
+                        const tableHeader = document.createElement('thead');
+                        tableHeader.innerHTML = `
+                            <tr>
+                                <td>Remove</td>
+                                <td>Image</td>
+                                <td>Product</td>
+                                <td>Size</td>
+                                <td>Price</td>
+                                <td>Quantity</td>
+                                <td>Subtotal</td>
+                            </tr>
+                        `;
+                        cartTable.appendChild(tableHeader);
+        
+                        // Table body
+                        const tableBody = document.createElement('tbody');
+                        let totalAmount = 0;
+        
+                        cartItems.forEach((item, index) => {
+                            const cartItemRow = document.createElement('tr');
+        
+                            const removeCell = document.createElement('td');
+                            const removeIcon = document.createElement('a');
+                            removeIcon.href = "#";
+                            removeIcon.innerHTML = '<ion-icon name="close-circle-outline"></ion-icon>';
+                            removeIcon.addEventListener('click', function () {
+                                cartItems.splice(index, 1);
+                                localStorage.setItem('cart', JSON.stringify(cartItems));
+                                updateCartUI();
+                            });
+                            removeCell.appendChild(removeIcon);
+                            cartItemRow.appendChild(removeCell);
+        
+                            const imageCell = document.createElement('td');
+                            imageCell.innerHTML = `<img src="${item.image}" alt="" style="max-width: 50px;">`;
+                            cartItemRow.appendChild(imageCell);
+        
+                            const productCell = document.createElement('td');
+                            productCell.textContent = item.name;
+                            cartItemRow.appendChild(productCell);
+        
+                            const sizeCell = document.createElement('td');
+                            sizeCell.textContent = item.size;
+                            cartItemRow.appendChild(sizeCell);
+        
+                            const priceCell = document.createElement('td');
+                            priceCell.textContent = `$${item.price.toFixed(2)}`;
+                            cartItemRow.appendChild(priceCell);
+        
+                            const quantityCell = document.createElement('td');
+                            const quantityInput = document.createElement('input');
+                            quantityInput.type = 'number';
+                            quantityInput.value = item.quantity;
+                            quantityInput.addEventListener('change', function () {
+                                item.quantity = parseInt(quantityInput.value);
+                                localStorage.setItem('cart', JSON.stringify(cartItems));
+                                updateCartUI();
+                            });
+                            quantityCell.appendChild(quantityInput);
+                            cartItemRow.appendChild(quantityCell);
+        
+                            const subtotalCell = document.createElement('td');
+                            const subtotal = item.price * item.quantity;
+                            subtotalCell.textContent = `$${subtotal.toFixed(2)}`;
+                            cartItemRow.appendChild(subtotalCell);
+        
+                            totalAmount += subtotal;
+        
+                            tableBody.appendChild(cartItemRow);
+                        });
+        
+                        cartTable.appendChild(tableBody);
+        
+                        // Total line
+                        const totalRow = document.createElement('tr');
+                        totalRow.innerHTML = `
+                            <td colspan="6"><strong>Total</strong></td>
+                            <td>$${totalAmount.toFixed(2)}</td>
+                        `;
+                        tableBody.appendChild(totalRow);
+        
+                        cartItemsContainer.innerHTML = '';
+                        cartItemsContainer.appendChild(cartTable);
+        
+                        // Checkout button
+                        const checkoutButton = document.createElement('button');
+                        checkoutButton.className = 'normal';
+                        checkoutButton.textContent = 'Proceed to Checkout';
+                        checkoutButton.addEventListener('click', function () {
+                            // Handle checkout logic here
+                            alert('Proceeding to checkout. Total Amount: $' + totalAmount.toFixed(2));
+                        });
+                        cartItemsContainer.appendChild(checkoutButton);
+                    } else {
+                        const emptyCartMessage = document.createElement('p');
+                        emptyCartMessage.textContent = 'Your cart is empty.';
+                        cartItemsContainer.innerHTML = '';
+                        cartItemsContainer.appendChild(emptyCartMessage);
+                    }
+                }
+        
+                updateCartUI();
+
+                const logoutButton = document.querySelector('.btnLogout-popup');
+        
+                if (logoutButton) {
+                    logoutButton.addEventListener('click', function () {
+                        // Redirect to 'index.html' upon logout
+                        window.location.href = 'index.html';
+                    });
+                } else {
+                    console.error("Logout button not found");
+                }
+            });
+        </script>
+      
+
+       
+        
+        <script src="script.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    </body>
+
+</html>
+
+
+
+ <!-- <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const cartItemsContainer = document.getElementById('cart-items');
+        
+                let cartItems = localStorage.getItem('cart')
+                    ? JSON.parse(localStorage.getItem('cart'))
+                    : [];
+        
+                if (cartItems.length > 0) {
+                    const cartTable = document.createElement('table');
+                    cartTable.width = '100%';
+        
+                    // Table header
+                    const tableHeader = document.createElement('thead');
+                    tableHeader.innerHTML = `
+                        <tr>
+                            <td>Remove</td>
+                            <td>Image</td>
+                            <td>Product</td>
+                            <td>Size</td>
+                            <td>Price</td>
+                            <td>Quantity</td>
+                            <td>Subtotal</td>
+                        </tr>
+                    `;
+                    cartTable.appendChild(tableHeader);
+        
+                    // Table body
+                    const tableBody = document.createElement('tbody');
+                    cartItems.forEach(item => {
+                        const cartItemRow = document.createElement('tr');
+        
+                        const removeCell = document.createElement('td');
+                        removeCell.innerHTML = '<a href="#"><ion-icon name="close-circle-outline"></ion-icon></a>';
+                        cartItemRow.appendChild(removeCell);
+        
+                        const imageCell = document.createElement('td');
+                        imageCell.innerHTML = `<img src="${item.image}" alt="" style="max-width: 50px;">`;
+                        cartItemRow.appendChild(imageCell);
+        
+                        const productCell = document.createElement('td');
+                        productCell.textContent = item.name;
+                        cartItemRow.appendChild(productCell);
+        
+                        const sizeCell = document.createElement('td');
+                        sizeCell.textContent = item.size;
+                        cartItemRow.appendChild(sizeCell);
+        
+                        const priceCell = document.createElement('td');
+                        priceCell.textContent = `$${item.price.toFixed(2)}`;
+                        cartItemRow.appendChild(priceCell);
+        
+                        const quantityCell = document.createElement('td');
+                        quantityCell.innerHTML = `<input type="number" value="${item.quantity}">`;
+                        cartItemRow.appendChild(quantityCell);
+        
+                        const subtotalCell = document.createElement('td');
+                        subtotalCell.textContent = `$${(item.price * item.quantity).toFixed(2)}`;
+                        cartItemRow.appendChild(subtotalCell);
+        
+                        tableBody.appendChild(cartItemRow);
+                    });
+        
+                    cartTable.appendChild(tableBody);
+        
+                    cartItemsContainer.appendChild(cartTable);
+                } else {
+                    const emptyCartMessage = document.createElement('p');
+                    emptyCartMessage.textContent = 'Your cart is empty.';
+                    cartItemsContainer.appendChild(emptyCartMessage);
+                }
+            });
+        </script> -->
+
+<!-- <section id="cart" class="section-p1">
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <td>Remove</td>
+                        <td>Image</td>
+                        <td>Product</td>
+                        <td>Price</td>
+                        <td>Quantity</td>
+                        <td>Subtotal</td>
+                    </tr>
+                </thead> 
+                <tbody>
+                    <tr>
+                        <td><a href="#"><ion-icon name="close-circle-outline"></ion-icon></a></td>
+                        <td><img src="img/products/f1.jpeg" alt=""></td>
+                        <td>Cartoon Astronaut T-shirt</td>
+                        <td>$118.19</td>
+                        <td><input type="number" value="1"></td>
+                        <td>$118.19</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"><ion-icon name="close-circle-outline"></ion-icon></a></td>
+                        <td><img src="img/products/f2.jpeg" alt=""></td>
+                        <td>Cartoon Astronaut T-shirt</td>
+                        <td>$118.19</td>
+                        <td><input type="number" value="1"></td>
+                        <td>$118.19</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"><ion-icon name="close-circle-outline"></ion-icon></a></td>
+                        <td><img src="img/products/f3.jpeg" alt=""></td>
+                        <td>Cartoon Astronaut T-shirt</td>
+                        <td>$118.19</td>
+                        <td><input type="number" value="1"></td>
+                        <td>$118.19</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>        
+        
+        <section id="cart-add" class="section-p1">
+            <div id="coupon">
+                <h3>Apply Coupon</h3>
+                <div>
+                    <input type="text" placeholder="Enter your coupon">
+                    <button class="normal">Apply</button>
+                </div>
+            </div>
+            <div id="subtotal">
+                <h3>Cart Totals</h3>
+                <table>
+                    <tr>
+                        <td>Cart Subtotal</td>
+                        <td>$ 335</td>
+                    </tr>
+                    <tr>
+                        <td>Shipping</td>
+                        <td>Free</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td><strong>$ 335</strong></td>
+                    </tr>
+                </table>
+                <button class="normal">Proceed to Checkout</button>
+            </div>
+        </section> -->

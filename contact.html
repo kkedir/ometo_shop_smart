@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>O-Meto</title>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    </head>
+
+    <body>
+        <section id="header">
+            <a href="#"><img src="img/logo1.png" height="55px" class="logo" alt=""></a>
+
+            <div>
+                <ul id="navbar">
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">My Account</a></li>
+                    <li><a class="active" href="contact.html">Contact</a></li>
+                    <li id="lg-bag"><a href="cart.html"><ion-icon name="cart" style="font-size: 50px;"></ion-icon></i></a></li>
+                    <a href="#" id="close"><ion-icon name="close"></ion-icon></a>
+                    <button class="btnLogout-popup">Logout</button>
+                </ul>
+            </div>
+            <div id="mobile">
+                <a href="cart.html"><ion-icon name="cart"></ion-icon></i></a>
+                <ion-icon id="bar" name="reorder-four-outline"></ion-icon>
+            </div>
+        </section>
+
+         
+        <section id="page-header">
+            <div class="wrapper">
+                <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+                <div class="form-box login">
+                    <h2>Login</h2>
+                    <form action="#">
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                            <input type="email" required>
+                            <label>Email</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                            <input type="password" required>
+                            <label>Password</label>
+                        </div>
+                        <div class="remember-forgot">
+                            <label><input type="checkbox"> Remember me</label>
+                            <a href="#">Forget Password?</a>
+                        </div>
+                        <button type="submit" class="btn">Login</button>
+                        <div class="login-register">
+                            <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                        </div>
+                    </form>
+                </div>
+
+                
+                <div class="form-box register">
+                    <h2>Registration</h2>
+                    <form action="#">
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="person"></ion-icon></span>
+                            <input type="text" required>
+                            <label>Full Name</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                            <input type="email" required>
+                            <label>Email</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                            <input type="password" required>
+                            <label>Password</label>
+                        </div>
+                        <div class="remember-forgot">
+                            <label><input type="checkbox"> I agree to the terms & conditions</label>
+                        </div>
+                        <button type="submit" class="btn">Register</button>
+                        <div class="login-register">
+                            <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <h2>We are here for you 24/7</h2>
+            <p> Leave a message, we love to hear from you!</p>
+         
+ 
+        </section>
+        
+        <section id="contact-details">
+            <div class="details">
+                <span>GET IN TOUCH</span>
+                <h2>Visit one of our website or contact us today</h2>
+                <h3>Head office</h3>
+                <div>
+                    <li>
+                        <i><ion-icon name="map-outline"></ion-icon></i>
+                        <p>Seattle, WA</p>
+                    </li>
+                    <li>
+                        <i><ion-icon name="mail-outline"></ion-icon></i>
+                        <p>ometo@gmail.com</p>
+                    </li>
+                    <li>
+                        <i><ion-icon name="mail-outline"></ion-icon></i>
+                        <p>888-888-2323</p>
+                    </li>
+                    <li>
+                        <i><ion-icon name="today-outline"></ion-icon></i>
+                        <p>Monday - Saturday: 9:00 am t0 8:00 pm</p>
+                    </li>
+                </div>
+
+            </div>
+
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d172139.48100377206!2d-122.50721498029506!3d47.612923486136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490102c93e83355%3A0x102565466944d59a!2sSeattle%2C%20WA!5e0!3m2!1sen!2sus!4v1701057815752!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+        </section>
+
+
+        <section id="form-details">
+            <form action="">
+                <span>LEAVE A MESSAGE</span>
+                <h2></h2>
+                <input type="text" placeholder="Your Name">
+                <input type="text" placeholder="E-mail">
+                <input type="text" placeholder="Subject">
+                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+                <button class="normal">Submit</button>
+            </form>
+
+        </section>
+        
+
+        <section id="newsletter" class="section-p1 section-m1">
+            <div class="newstext">
+                <h4>Contact Us!</h4>
+                <!-- <p>Get E-mail updates about our latest shop and <span>special offers.</span></p> -->
+            </div>
+            <div class="form">
+                <!-- <input type="text" placeholder="your email address">
+                <button class="normal">Sign Up</button> -->
+            </div>
+        </section>
+        
+        <footer class="section-p1">
+            <div class="col">
+                <img class="logo" src="img/logo1.png" height="55px" alt="">
+                <h4>Contact</h4>
+                <p><strong>Address: </strong> Seattle, WA</p>
+                <p><strong>Phone: </strong> 206-240-9455</p>
+                <p><strong>Hours: </strong> 10:00 - 18:00, Mon - Sat</p>
+                <div class="follow">
+                    <h4>Follow us</h4>
+                    <div class="icon">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                        <ion-icon name="logo-twitter"></ion-icon>
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <h4>About</h4>
+                <a href="#">About Us</a>
+                <a href="#">Delivery Information</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="col">
+                <h4>My Account</h4>
+                <a href="#">Sign In</a>
+                <a href="#">View Cart</a>
+                <a href="#">My Wishlist</a>
+                <a href="#">Track My Order</a>
+                <a href="#">Help</a>
+            </div>
+            <div class="col install">
+                <h4>Secured Payment Gateways</h4>
+                <img src="img/pay/pay.png" alt="">
+            </div>
+            <div class="copyright">
+                <p>© 2023, korme kedir</p>
+            </div>
+        </footer>
+        
+<!-- Add this script inside the <head> or at the end of the <body> in your HTML file -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoutButton = document.querySelector('.btnLogout-popup');
+    
+            if (logoutButton) {
+                logoutButton.addEventListener('click', function () {
+                    // Redirect to 'index.html' upon logout
+                    window.location.href = 'index.html';
+                });
+            } else {
+                console.error("Logout button not found");
+            }
+        });
+    </script>
+    
+
+        <script src="script.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    </body>
+
+</html>
